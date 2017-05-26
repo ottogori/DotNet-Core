@@ -1,0 +1,6 @@
+FROM microsoft/aspnetcore-build
+WORKDIR /aspnetcoreApp
+
+RUN git clone https://github.com/ottogori/DotNet-Core.git
+
+ENTRYPOINT ["dotnet", "DotNet-Core/MyWebApp/MyWebApp.sln"]
