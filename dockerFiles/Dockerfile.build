@@ -1,0 +1,9 @@
+FROM microsoft/dotnet:runtime
+WORKDIR /dotnetapp
+
+RUN git clone https://github.com/ottogori/DotNet-Core.git
+
+RUN dotnet restore
+RUN dotnet publish -c Release -o out
+
+ENTRYPOINT ["dotnet", "dotnetapp.dll"]
